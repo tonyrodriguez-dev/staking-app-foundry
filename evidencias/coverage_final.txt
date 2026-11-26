@@ -1,0 +1,35 @@
+# Salida real FINAL: forge test + forge coverage (proyecto terminado, 26-nov-2026)
+forge Version: 1.9.0
+No files changed, compilation skipped
+
+Ran 14 tests for test/StakingAppTest.t.sol:StakingAppTest
+[PASS] testCanClaimRewardsCorrectly() (gas: 384228)
+[PASS] testCanNotClaimIfNotElapsedTime() (gas: 322377)
+[PASS] testCanNotClaimIfNotStaking() (gas: 37090)
+[PASS] testCanOnlyWithdraw0WithoutDeposit() (gas: 65744)
+[PASS] testContractReceivesEtherCorrectly() (gas: 43572)
+[PASS] testDepositTokensCorrectly() (gas: 286554)
+[PASS] testIncorrectAmountShouldRevert() (gas: 35471)
+[PASS] testShouldChangeStakingPeriod() (gas: 54185)
+[PASS] testShouldRevertIfNotEther() (gas: 337386)
+[PASS] testShouldRevertIfNotOwner() (gas: 32323)
+[PASS] testStakingAppCorrectCorrectlyDeployed() (gas: 2357)
+[PASS] testStakingTokenCorrectCorrectlyDeployed() (gas: 2452)
+[PASS] testUserCanNotDepositMoreThanOnce() (gas: 422887)
+[PASS] testWithdrawTokensCorrectly() (gas: 377052)
+Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 54.49ms (42.12ms CPU time)
+
+Ran 1 test for test/StakingTokenTest.t.sol:StakingTokenTest
+[PASS] testStakingTokenMintsCorrectly() (gas: 96172)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 53.09ms (4.99ms CPU time)
+
+Ran 2 test suites in 70.63ms (107.58ms CPU time): 15 tests passed, 0 failed, 0 skipped (15 total tests)
+╭----------------------+-----------------+-----------------+-----------------+---------------╮
+| File                 | % Lines         | % Statements    | % Branches      | % Funcs       |
++============================================================================================+
+| src/StakingApp.sol   | 100.00% (29/29) | 100.00% (25/25) | 100.00% (10/10) | 100.00% (6/6) |
+|----------------------+-----------------+-----------------+-----------------+---------------|
+| src/StakingToken.sol | 100.00% (3/3)   | 100.00% (1/1)   | N/A (0/0)       | 100.00% (2/2) |
+|----------------------+-----------------+-----------------+-----------------+---------------|
+| Total                | 100.00% (32/32) | 100.00% (26/26) | 100.00% (10/10) | 100.00% (8/8) |
+╰----------------------+-----------------+-----------------+-----------------+---------------╯
