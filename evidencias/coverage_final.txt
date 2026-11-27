@@ -1,6 +1,4 @@
-# Salida real FINAL: forge test + forge coverage (proyecto terminado, 26-nov-2026)
-forge Version: 1.9.0
-No files changed, compilation skipped
+# Final output (18 tests): forge test + forge coverage
 
 Ran 14 tests for test/StakingAppTest.t.sol:StakingAppTest
 [PASS] testCanClaimRewardsCorrectly() (gas: 384228)
@@ -17,13 +15,19 @@ Ran 14 tests for test/StakingAppTest.t.sol:StakingAppTest
 [PASS] testStakingTokenCorrectCorrectlyDeployed() (gas: 2452)
 [PASS] testUserCanNotDepositMoreThanOnce() (gas: 422887)
 [PASS] testWithdrawTokensCorrectly() (gas: 377052)
-Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 54.49ms (42.12ms CPU time)
+Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 34.05ms (19.41ms CPU time)
+
+Ran 3 tests for test/StakingAppGapsTest.t.sol:StakingAppGapsTest
+[PASS] testChangeStakingPeriodEmitsEvent() (gas: 43136)
+[PASS] testNonOwnerCanNotFundApp() (gas: 42308)
+[PASS] testWithdrawClearsUserBalance() (gas: 306285)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 33.94ms (7.58ms CPU time)
 
 Ran 1 test for test/StakingTokenTest.t.sol:StakingTokenTest
 [PASS] testStakingTokenMintsCorrectly() (gas: 96172)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 53.09ms (4.99ms CPU time)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 33.90ms (3.89ms CPU time)
 
-Ran 2 test suites in 70.63ms (107.58ms CPU time): 15 tests passed, 0 failed, 0 skipped (15 total tests)
+Ran 3 test suites in 40.22ms (101.89ms CPU time): 18 tests passed, 0 failed, 0 skipped (18 total tests)
 ╭----------------------+-----------------+-----------------+-----------------+---------------╮
 | File                 | % Lines         | % Statements    | % Branches      | % Funcs       |
 +============================================================================================+

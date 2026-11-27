@@ -2,7 +2,7 @@
 
 A staking smart contract built with Solidity 0.8.34, OpenZeppelin v5.7.0 and tested with [Foundry](https://book.getfoundry.sh/). Users deposit a fixed amount of an ERC-20 token (`STK`) and, every time a staking period passes, they can claim a fixed ETH reward. The owner funds the rewards.
 
-The focus of the project is testing: 15 tests (14 for the app, 1 for the token), 100% coverage, and a mutation check that shows which tests really protect the code and which do not (see [Honest review of the tests](#honest-review-of-the-tests)).
+The focus of the project is testing: 18 tests (17 for the app, 1 for the token), 100% coverage, and a mutation check that shows which tests really protect the code and which do not (see [Honest review of the tests](#honest-review-of-the-tests)).
 
 Built while following a Blockchain Accelerator course, module 7. The contracts match the course material; the review, the mutation check and the documentation are my own work.
 
@@ -72,6 +72,9 @@ Every test, what it checks and how solid it is is explained one by one in [docs/
 | `testShouldRevertIfNotEther` | Claim when the app has no ETH reverts with "Transfer failed" |
 | `testCanClaimRewardsCorrectly` | Claim pays `rewardPerPeriod` and updates the timer |
 | `testStakingTokenMintsCorrectly` | `mint` increases the caller's balance |
+| `testNonOwnerCanNotFundApp` | A non-owner cannot send ETH to the app (closes gap 1) |
+| `testWithdrawClearsUserBalance` | After a withdraw `userBalance` is 0 (closes gap 2) |
+| `testChangeStakingPeriodEmitsEvent` | `changeStakingPeriod` emits its event (closes gap 3) |
 
 ## How the coverage grew
 
@@ -116,9 +119,12 @@ Other things worth knowing about the design (course scope, not fixed here):
 - `fixedStakingAmount = 10` in the tests means 10 minimal units of the token, not 10 whole tokens.
 - The test period (`100000000000000` seconds) is deliberately huge so `vm.warp` can jump past it.
 
+## Gaps closed
+
+The three surviving mutations are closed by `test/StakingAppGapsTest.t.sol` (3 extra tests). I re-ran the mutations against the real repo: each new test fails when its mutation is applied and passes on the real contract. The first 15 tests are the original course suite; the 3 extra ones are mine.
+
 ## Possible next steps
 
-- Add the three missing tests (non-owner cannot fund the app, `userBalance` is 0 after a withdraw, `vm.expectEmit` for each event).
 - A test with two claims in a row and one where the owner refunds the app after a failed claim.
 - Fuzz tests for the deposit amount and the elapsed time.
 
@@ -129,6 +135,7 @@ src/StakingApp.sol            staking logic
 src/StakingToken.sol          ERC-20 test token
 test/StakingAppTest.t.sol     14 tests
 test/StakingTokenTest.t.sol   1 test
+test/StakingAppGapsTest.t.sol 3 extra tests closing the mutation gaps
 docs/TESTS.md                 every test explained
 evidencias/                   real forge test + coverage output
 ```
