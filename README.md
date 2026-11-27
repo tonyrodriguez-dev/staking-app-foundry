@@ -73,6 +73,20 @@ Every test, what it checks and how solid it is is explained one by one in [docs/
 | `testCanClaimRewardsCorrectly` | Claim pays `rewardPerPeriod` and updates the timer |
 | `testStakingTokenMintsCorrectly` | `mint` increases the caller's balance |
 
+## How the coverage grew
+
+`forge test --coverage` after each stage of the build (coverage of `StakingApp`):
+
+| Tests | Lines | Screenshot |
+| --- | --- | --- |
+| 6 | 34.48% | [docs/img/1-six-tests-34pct.png](docs/img/1-six-tests-34pct.png) |
+| 8 | 58.62% | [docs/img/2-eight-tests-59pct.png](docs/img/2-eight-tests-59pct.png) |
+| 9 | 58.62% | [docs/img/3-nine-tests-59pct.png](docs/img/3-nine-tests-59pct.png) |
+| 11 | 75.86% | [docs/img/4-eleven-tests-76pct.png](docs/img/4-eleven-tests-76pct.png) |
+| 15 | 100% | [docs/img/5-fifteen-tests-100pct.png](docs/img/5-fifteen-tests-100pct.png) |
+
+![15 tests, 100% coverage](docs/img/5-fifteen-tests-100pct.png)
+
 ## Honest review of the tests
 
 100% coverage only means every line ran. To check that the tests really protect the code, I copied the contract, broke one thing at a time (a mutation) and ran the suite. 12 mutations, 9 caught and **3 survived**:
