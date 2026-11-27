@@ -12,9 +12,10 @@ out/
 /broadcast/**/dry-run/
 
 # Docs
-docs/
+docs/book/
 
 # Dotenv file
 .env
 .env.*
 !.env.example
+.DS_Store
