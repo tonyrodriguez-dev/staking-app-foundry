@@ -84,8 +84,13 @@ Every test, what it checks and how solid it is is explained one by one in [docs/
 | 9 | 58.62% | [docs/img/3-nine-tests-59pct.png](docs/img/3-nine-tests-59pct.png) |
 | 11 | 75.86% | [docs/img/4-eleven-tests-76pct.png](docs/img/4-eleven-tests-76pct.png) |
 | 15 | 100% | [docs/img/5-fifteen-tests-100pct.png](docs/img/5-fifteen-tests-100pct.png) |
+| 18 (15 + 3 gap-closing tests) | 100% | [docs/img/6-eighteen-tests-100pct.png](docs/img/6-eighteen-tests-100pct.png) |
 
 ![15 tests, 100% coverage](docs/img/5-fifteen-tests-100pct.png)
+
+Final state, with the three tests that close the mutation gaps (from PR #1):
+
+![18 tests, 100% coverage](docs/img/6-eighteen-tests-100pct.png)
 
 ## Honest review of the tests
 
